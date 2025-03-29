@@ -1,0 +1,902 @@
+.main__promotions {
+    padding: 20px 0;
+}
+
+.main__promotions__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.main__promotions__add {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.main__promotions__add:hover {
+    background-color: #45a049;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.promotion-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promotion-active {
+    border-left: 4px solid #4CAF50;
+}
+
+.promotion-inactive {
+    border-left: 4px solid #e74c3c;
+    opacity: 0.8;
+}
+
+.promotion-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.promotion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promotion-content {
+    padding: 15px;
+}
+
+.promotion-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.promotion-body {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.promotion-promo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.promo-code {
+    font-weight: bold;
+    margin: 0 5px;
+    color: #e74c3c;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.copy-btn:hover {
+    color: #2980b9;
+}
+
+.promotion-discount, .promotion-uses, .promotion-dates {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.promotion-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.edit-promotion-btn, .delete-promotion-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-promotion-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.delete-promotion-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.edit-promotion-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-promotion-btn:hover {
+    background-color: #c0392b;
+}
+
+.promo-code-container {
+    display: flex;
+    gap: 10px;
+}
+
+#generate-promo-btn, #edit-generate-promo-btn {
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#generate-promo-btn:hover, #edit-generate-promo-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Стили для уведомлений */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification.success {
+    background-color: #2ecc71;
+}
+
+.notification.error {
+    background-color: #e74c3c;
+}
+
+/* Стили заголовка */
+.main__clients__title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.main__clients__controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.main__clients__add {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.main__clients__add:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Стили пагинации */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover:not(.active):not(.disabled) {
+    background-color: #f0f0f0;
+    border-color: #007bff;
+}
+
+.page-link.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.page-link.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #eee;
+}
+
+/* Стрелки пагинации */
+.page-link:first-child,
+.page-link:last-child {
+    font-weight: bold;
+}
+
+/* Стили контейнера акций */
+.promotions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.promotion-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promotion-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.promotion-active .promotion-status {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.promotion-inactive .promotion-status {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.promotion-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.promotion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.promotion-card:hover .promotion-image img {
+    transform: scale(1.05);
+}
+
+.promotion-content {
+    padding: 15px;
+}
+
+.promotion-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.promotion-body {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.promotion-info {
+    margin-bottom: 15px;
+}
+
+.promotion-promo, .promotion-discount, .promotion-uses, .promotion-dates {
+    margin-bottom: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.promo-code {
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 0 5px;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.copy-btn:hover {
+    color: #2980b9;
+}
+
+.promotion-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.edit-promotion-btn, .delete-promotion-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-promotion-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.delete-promotion-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.edit-promotion-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-promotion-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Стили для модальных окон */
+.modal__form-group {
+    margin-bottom: 15px;
+}
+
+.modal__form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal__form-group input,
+.modal__form-group textarea,
+.modal__form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal__form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.promo-code-container {
+    display: flex;
+    gap: 10px;
+}
+
+#generate-promo-btn, 
+#edit-generate-promo-btn {
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#generate-promo-btn:hover, 
+#edit-generate-promo-btn:hover {
+    background-color: #2980b9;
+}
+
+.current-image-container {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.current-image-container img {
+    max-width: 200px;
+    max-height: 150px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Сообщение при отсутствии акций */
+.no-promotions {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: #7f8c8d;
+    font-size: 18px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+}
+
+/* Стили для кнопок в модальных окнах */
+.modal__form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal__btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal__btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal__btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.modal__btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.modal__btn-primary:hover {
+    background-color: #45a049;
+}
+
+.modal__btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.modal__btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .promotions-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .promotion-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .edit-promotion-btn, .delete-promotion-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .modal__container {
+        width: 95%;
+        max-width: 95%;
+    }
+}
+/* Основные стили страницы */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.promotions-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Контейнер для кнопки добавления акции */
+.add-promotion-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.add-promotion-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.add-promotion-btn i {
+    margin-right: 5px;
+}
+
+.add-promotion-btn:hover {
+    background-color: #45a049;
+}
+
+/* Контейнер для поиска */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+.search-button {
+    background-color: #337ab7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #286090;
+}
+
+/* Контейнер для карточек акций */
+.promotions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Стили для карточек акций - используем стили из tech.php */
+.promotion-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 250px; /* Устанавливаем фиксированную высоту */
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.promotion-percentage {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.ticket-header {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.ticket-details {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-info {
+    flex-grow: 1;
+}
+
+.promotion-description {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.promotion-dates {
+    color: #888;
+    font-size: 12px;
+    margin: 10px 0 0 0;
+}
+
+.ticket-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+}
+
+.edit-promotion-btn, .delete-promotion-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.edit-promotion-btn {
+    background-color: #3498db;
+}
+
+.edit-promotion-btn i {
+    color: white;
+}
+
+.delete-promotion-btn {
+    background-color: #e74c3c;
+}
+
+.delete-promotion-btn i {
+    color: white;
+}
+
+.edit-promotion-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-promotion-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Стили для пагинации (копируем из tech.php) */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 3px;
+    border: 1px solid #ddd;
+    color: #337ab7;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-link.active {
+    background-color: #337ab7;
+    color: white;
+    border-color: #337ab7;
+}
+
+.page-link.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.page-link:not(.active):not(.disabled):hover {
+    background-color: #f5f5f5;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+#modalTitle {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.form-actions button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#savePromotionBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#savePromotionBtn:hover {
+    background-color: #45a049;
+}
+
+#cancelBtn {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+#cancelBtn:hover {
+    background-color: #e9e9e9;
+}
+
+/* Скрываем статусы "Активна"/"Неактивна" */
+.promotion-status {
+    display: none !important;
+} 

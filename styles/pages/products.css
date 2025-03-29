@@ -1,0 +1,468 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Стили для хедера */
+.header {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__admin {
+    color: #333;
+    font-size: 1rem;
+}
+
+.header__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__links a {
+    color: #157bda;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header__links a:hover {
+    color: #0056b3;
+}
+
+.header__logout {
+    color: #dc3545;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header__logout:hover {
+    color: #c82333;
+}
+
+/* Стили для основного контента */
+.main__filters {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+}
+
+.main__form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.main__label {
+    font-size: 16px;
+    color: #333;
+}
+
+.main__input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.main__select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.main__select1 {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Стили для таблицы товаров */
+.main__products table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.main__products th,
+.main__products td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.main__products th {
+    background-color: #157bda;
+    color: white;
+    font-weight: 600;
+}
+
+.main__products tr:hover {
+    background-color: #e3e3e3;
+    transition: background-color 0.2s ease;
+}
+
+.main__products__title {
+    font-size: 24px;
+    text-align: center;
+    margin: 16px 0;
+}
+
+.main__products__add {
+    position: sticky;
+    top: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Стили для иконок в таблице */
+.main__products td i {
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.main__products td i.fa-qrcode:hover {
+    color: #2196F3;
+}
+
+.main__products td i.fa-pencil:hover {
+    color: #4CAF50;
+}
+
+.main__products td i.fa-trash:hover {
+    color: #F44336;
+}
+
+/* Стили для модальных окон */
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal__form-group label {
+    font-size: 14px;
+    color: #333;
+}
+
+.modal__form-group input,
+.modal__form-group textarea {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal__form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.modal__btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal__btn-primary {
+    background-color: #157bda;
+    color: white;
+}
+
+.modal__btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.modal__btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.modal__btn-secondary:hover {
+    background-color: #545b62;
+}
+
+/* Стили для QR кода */
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.qr-code-container img {
+    max-width: 200px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main__form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main__products {
+        overflow-x: auto;
+    }
+
+    .modal__form-actions {
+        flex-direction: column;
+    }
+
+    .modal__btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 5px;
+    }
+
+    .main__products table {
+        font-size: 12px;
+    }
+
+    .main__products th,
+    .main__products td {
+        padding: 8px;
+    }
+
+    .qr-code-container img {
+        max-width: 150px;
+    }
+}
+
+.main__reset{
+    text-decoration: none;
+    color: #000000;
+}
+
+.main__select {
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    transition: border-color 0.2s;
+}
+
+.main__select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination a, .pagination span, .pagination-container > a {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.pagination .active, .pagination span.active {
+    background-color: #2196f3;
+    color: white;
+    border-color: #2196f3;
+}
+
+.pagination-container a[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.pagination a:hover:not(.active), .pagination-container > a:hover:not([disabled]) {
+    background-color: #f5f5f5;
+}
+
+/* Стили для кнопки техподдержки */
+.support-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.support-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Стили для формы создания тикета */
+.support-create-ticket {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: 999;
+    display: none; /* По умолчанию скрыта */
+}
+
+.support-create-ticket.active {
+    display: block;
+}
+
+.support-create-ticket form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.support-create-ticket label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.support-create-ticket textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.support-create-ticket textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.support-create-ticket input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.support-create-ticket input[type="file"]:hover {
+    border-color: #4a76a8;
+}
+
+.support-create-ticket input[type="file"]::-webkit-file-upload-button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4a76a8;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.support-create-ticket input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #3d6393;
+}
+
+/* Стили для формы техподдержки */
+.support-select {
+    width: 100%;
+    padding: 10px 35px 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234a76a8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.support-select:hover {
+    border-color: #4a76a8;
+}
+
+.support-select:focus {
+    border-color: #4a76a8;
+    box-shadow: 0 0 0 3px rgba(74, 118, 168, 0.1);
+}
+
+.support-submit {
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.support-submit:hover {
+    background-color: #3d6393;
+}
+
+
+
